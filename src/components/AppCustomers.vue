@@ -1,7 +1,7 @@
 <template>
       <div>
           <h1>Customers</h1>
-          <table>
+          <table class="table">
                <thead>
                    <th>
                        Id
@@ -31,11 +31,26 @@
                             {{customer.email}}
                         </td>
                         <td>
-                            <button type="submit" @click="deleteCustomer(customer)">Delete</button>
+                            <button class="btn btn-danger" type="submit" @click="deleteCustomer(customer)">Delete</button>
                         </td>
                    </tr>
                </tbody>
           </table>
+          <form  v-on:submit.prevent>
+            <div class="form-group">
+               <label>First name: </label>
+               <input  v-model="newCustomer.first_name" type="text" placeholder="First name">
+            </div>
+            <div class="form-group">
+               <label>Last name: </label>
+               <input  v-model="newCustomer.last_name" type="text" placeholder="Last name">
+            </div>
+            <div class="form-group">
+               <label>Email: </label>
+               <input v-model="newCustomer.email" type="text" placeholder="Email">
+            </div>
+            <button class="btn btn-success" type="submit" @click="addCustomer">Add customer</button>
+          </form>
       </div>
 </template>
 
@@ -50,9 +65,13 @@ export default {
       };
   },
   methods: {
+      addCustomer() {
+            customerService.addCustomer(this.newCustomer);
+            this.newCustomer = {};
+      },
+
       deleteCustomer(customer) {
-            let indexOfCustomerToDelete = this.customers.indexOf(customer);
-            this.customers.splice(indexOfCustomerToDelete, 1);
+            customerService.deleteCustomer(customer);
       }
   }
 }
