@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-nav">
+            <router-link class="nav-item nav-link" to="/customers">Customers</router-link>
+            <router-link class="nav-item nav-link" to="/products">Products</router-link>
+        </div>
+      </nav>
+        <router-view></router-view>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -11,7 +18,8 @@ import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+
   }
 }
 </script>
