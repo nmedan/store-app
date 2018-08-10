@@ -31,6 +31,9 @@
                             {{customer.email}}
                         </td>
                         <td>
+                            <router-link :to="{name:'customer-details', params:{id:customer.id}}">Latest purchases</router-link>
+                        </td>
+                        <td>
                             <button class="btn btn-danger" type="submit" @click="deleteCustomer(customer)">Delete</button>
                         </td>
                    </tr>
