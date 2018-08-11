@@ -9,6 +9,11 @@ class ProductService {
     list() {
         return products;
     }    
+
+    getProductsByTitle(title) {
+        let productsByTitle = products.filter(product=>product.title===title);
+        return productsByTitle;
+    }
 }
 
 export const productService = new ProductService();
