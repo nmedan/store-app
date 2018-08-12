@@ -63,14 +63,14 @@ import {customerService} from '../services/CustomerService'
 export default {
   data() {
       return {
-         newCustomer:{},
+         newCustomer:{products:[]},
          customers:customerService.list()
       };
   },
   methods: {
       addCustomer() {
             customerService.addCustomer(this.newCustomer);
-            this.newCustomer = {};
+            this.newCustomer = {products:[]};
       },
 
       deleteCustomer(customer) {

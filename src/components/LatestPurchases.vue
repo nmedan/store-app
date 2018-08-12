@@ -5,7 +5,7 @@
           <p>Last name: {{customer.last_name}}</p>
           <p>Email: {{customer.email}}</p>
           <h3>Products</h3>
-          <p v-for="(product, key) in customer.products" :key="key">{{product.name}}</p>
+          <p v-for="(product, key) in customer.products" :key="key">{{product.title}}</p>
           <router-link  to="/customers">All customers</router-link>
       </div>
 </template>

@@ -6,9 +6,7 @@
             <router-link class="nav-item nav-link" to="/products">Products</router-link>
         </div>
       </nav>
-        <router-view></router-view>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <router-view></router-view>
   </div>
 </template>
 
@@ -19,7 +17,6 @@ export default {
   name: 'app',
   components: {
     HelloWorld,
-
   }
 }
 </script>

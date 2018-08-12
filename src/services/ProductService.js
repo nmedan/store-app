@@ -10,6 +10,11 @@ class ProductService {
         return products;
     }    
 
+    getProduct(id) {
+        let product = products.find(product => product.id === id);
+        return product;
+    }
+
     getProductsByTitle(title) {
         let productsByTitle = products.filter(product=>product.title===title);
         return productsByTitle;

@@ -34,6 +34,9 @@
                         <td>
                             <button class="btn btn-danger" type="submit" @click="decreaseQuantity(product)" :disabled="product.quantity<=0">-</button>
                         </td>
+                        <td>
+                            <router-link :to="{name:'buy-product', params:{id:product.id}}">Buy</router-link>
+                        </td>
                    </tr>
                </tbody>
           </table>
