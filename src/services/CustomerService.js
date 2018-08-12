@@ -30,10 +30,7 @@ class CustomerService {
 
     buyProduct(id, product) {
         let customer = customers.find(customer => customer.id === id);
-        console.log('producted found');
         customer.products.push(product);
-        console.log(customer.products.length);
-        console.log('producted bought');
     }
 }
 
