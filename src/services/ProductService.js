@@ -14,6 +14,14 @@ class ProductService {
         let productsByTitle = products.filter(product=>product.title===title);
         return productsByTitle;
     }
+
+    increaseQuantity(product) {
+        product.quantity++;
+    }
+
+    decreaseQuantity(product) {
+        product.quantity--;
+    }
 }
 
 export const productService = new ProductService();

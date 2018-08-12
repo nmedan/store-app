@@ -27,7 +27,13 @@
                         </td>
                         <td>
                             {{product.quantity}}
-                        </td>                      
+                        </td>
+                        <td>
+                            <button class="btn btn-success" type="submit" @click="increaseQuantity(product)">+</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" type="submit" @click="decreaseQuantity(product)" :disabled="product.quantity<=0">-</button>
+                        </td>
                    </tr>
                </tbody>
           </table>
@@ -47,6 +53,14 @@ export default {
     methods: {          
       searchProduct(title) {
          this.products = productService.getProductsByTitle(title);
+      },
+      
+      increaseQuantity(product) {
+         productService.increaseQuantity(product);
+      },
+      
+      decreaseQuantity(product) {
+         productService.decreaseQuantity(product);
       }
    }
     
